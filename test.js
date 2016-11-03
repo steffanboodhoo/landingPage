@@ -165,7 +165,7 @@
             })
         }
 
-        function l() {
+        /*function l() {
             var a,
                 d = Date.now();
             a = $("body").scrollTop();
@@ -181,7 +181,7 @@
             for (a = 1; a < e.length; a++) {
                 var g = Math.sqrt(Math.pow(e[a].x - e[a - 1].x, 2) + Math.pow(e[a].y - e[a - 1].y, 2));
                 b.strokeStyle = "rgba(0,0,0," + Math.max(1 - (d - e[a].time) / 1E3, 0) + ")";
-                b.lineWidth = 25 + 75 * Math.max(1 - g / 50, 5);// STEFFNOTE - this controls how wide the line is moving with your mouse
+                b.lineWidth = 25 + 75 * Math.max(1 - g / 50, 1);// STEFFNOTE - this controls how wide the line is moving with your mouse
                 b.beginPath();
                 b.moveTo(e[a - 1].x, e[a - 1].y);
                 b.lineTo(e[a].x, e[a].y);
@@ -211,6 +211,10 @@
                 window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(a) {
                     window.setTimeout(a, 1E3 / 60)
                 }
-        }()
+        }()*/
+        function l(){var a,
+d=Date.now();a=$("body").scrollTop();r=d>u+500?!1:!0;m&&r&&e.unshift({time:d,x:m,y:q+a});for(a=0;a<e.length;)1E3<d-e[a].time?e.length=a:a++;0<e.length&&window.j(l);b.clearRect(0,0,h.width,h.height);for(a=1;a<e.length;a++){var g=Math.sqrt(Math.pow(e[a].x-e[a-1].x,2)+Math.pow(e[a].y-e[a-1].y,2));b.strokeStyle="rgba(0,0,0,"+Math.max(1-(d-e[a].time)/1E3,0)+")";b.lineWidth=25+75*Math.max(1-g/50,0);b.beginPath();b.moveTo(e[a-1].x,e[a-1].y);b.lineTo(e[a].x,e[a].y);b.stroke()}d=c.width;a=c.width/k.naturalWidth*
+k.naturalHeight;a<c.height&&(a=c.height,d=c.height/k.naturalHeight*k.naturalWidth);f.drawImage(k,0,0,d,a);f.globalCompositeOperation="destination-in";f.drawImage(h,0,0);f.globalCompositeOperation="source-over";t.forEach(function(a){f.clearRect(a.left,a.top,a.width,a.height)})}var c,h,f,b,k,m=null,q=null,e=[],u=0,r=!0,t=[];"createTouch"in document||$("body").hasClass("newSignup")||$(g);window.j=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||
+window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)}}()
     });
 })();
